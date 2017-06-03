@@ -1,7 +1,5 @@
 const {getPrefix} = require('./prefix');
-const path = require('path');
 
-const isReadme = filename => path.basename(filename, '.md') === 'readme';
 const kebab = text => text.toLowerCase().replace(/\s+/g, '-');
 const getId = (prefix, text) => `${prefix}-${kebab(text)}`;
 
@@ -27,26 +25,13 @@ const idH1s = ($, prefix) =>
 
     });
 
-const idH2s = ($, prefix, isPrimary) =>
+const idH2s = ($, prefix) =>
   $('h2')
     .each((i, elem) => {
 
       const $element = $(elem);
-      let id = prefix;
 
-      /**
-       * presumption:
-       *  only readme.md will start with h1
-       *  any other file will start with h2
-       */
-
-      if (isPrimary || i > 1) {
-
-        id = getId(prefix, $element.text());
-
-      }
-
-      $element.attr('id', id);
+      $element.attr('id', getId(prefix, $element.text()));
 
     });
 
@@ -63,11 +48,10 @@ const idH3s = ($, prefix) =>
 const idTitles = ($, basePath, filename) => {
 
   const prefix = getPrefix(basePath, filename);
-  const isPrimary = isReadme(filename);
 
   idWrappers($, prefix);
   idH1s($, prefix);
-  idH2s($, prefix, isPrimary);
+  idH2s($, prefix);
   idH3s($, prefix);
 
 };
