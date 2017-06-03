@@ -9,3 +9,7 @@
 <p align="center">
     A webpack loader for converting InlineDB docs to html
 </p>
+
+<p align="center">
+    <a href="https://travis-ci.org/inlinedb/inlinedb-web"><img src="https://img.shields.io/travis/inlinedb/inlinedb-web.svg?label=deployment"></a>
+</p>
