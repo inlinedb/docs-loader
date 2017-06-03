@@ -6,13 +6,13 @@ const getPaths = function (context) {
   const options = loaderUtils.getOptions(context);
 
   const filename = loaderUtils.getCurrentRequest(context).split('!').pop();
-  const currentFolder = path.dirname(filename);
+  const currentPath = path.dirname(filename);
 
-  const docsFolder = path.join(options.basePath, 'docs');
+  const basePath = path.join(options.basePath, 'docs');
 
   return {
-    currentFolder,
-    docsFolder,
+    basePath,
+    currentPath,
     filename
   };
 
