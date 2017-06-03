@@ -5,13 +5,25 @@ const isReadme = filename => path.basename(filename, '.md') === 'readme';
 const kebab = text => text.toLowerCase().replace(/\s+/g, '-');
 const getId = (prefix, text) => `${prefix}-${kebab(text)}`;
 
+const idWrappers = ($, prefix) =>
+  $('section#wrapper')
+    .each((i, elem) => {
+
+      $(elem).attr('id', prefix);
+
+    });
+
 const idH1s = ($, prefix) =>
   $('h1')
     .each((i, elem) => {
 
-      const $element = $(elem);
+      if (i > 0) {
 
-      $element.attr('id', prefix);
+        const $element = $(elem);
+
+        $element.attr('id', getId(prefix, $element.text()));
+
+      }
 
     });
 
@@ -53,6 +65,7 @@ const idTitles = ($, basePath, filename) => {
   const prefix = getPrefix(basePath, filename);
   const isPrimary = isReadme(filename);
 
+  idWrappers($, prefix);
   idH1s($, prefix);
   idH2s($, prefix, isPrimary);
   idH3s($, prefix);
