@@ -40,7 +40,7 @@ const idH2s = ($, prefix, isPrimary) =>
        *  any other file will start with h2
        */
 
-      if (isPrimary) {
+      if (isPrimary || i > 1) {
 
         id = getId(prefix, $element.text());
 
