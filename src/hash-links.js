@@ -1,11 +1,10 @@
-const {hashPath, relativePath} = require('./regexps');
 const {getPrefix} = require('./prefix');
 const path = require('path');
 
 const LINKED = 'linked';
 
-const isHash = href => hashPath.test(href);
-const isRelative = href => relativePath.test(href);
+const isHash = href => /^#/.test(href);
+const isRelative = href => /^(\.{0,2}\/)+/.test(href);
 
 const setLink = ($element, currentPath, basePath) => {
 
