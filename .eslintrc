@@ -3,10 +3,6 @@
     "es6": true,
     "node": true
   },
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
-  },
   "rules": {
     "camelcase": 2,
     "consistent-return": 2,
