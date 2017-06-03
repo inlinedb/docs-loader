@@ -7,5 +7,12 @@
   },
   "repository": "inlinedb/docs-loader",
   "author": "Gopikrishna Sathyamurthy",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "cheerio": "1.0.0-rc.1",
+    "eslint": "3.19.0",
+    "loader-utils": "1.1.0",
+    "markdown-it": "8.3.1",
+    "prismjs": "1.6.0"
+  }
 }
