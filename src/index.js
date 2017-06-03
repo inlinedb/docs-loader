@@ -24,7 +24,7 @@ module.exports = function (content) {
   } = getPaths(this);
 
   const html = md.render(content);
-  const section = `<section id="wrapper">${html}</section>`;
+  const section = `<section id="wrapper" class="docs-section">${html}</section>`;
   const $html = cheerio.load(section);
 
   const links = convertLinksToHash($html, basePath, currentPath, filename);
