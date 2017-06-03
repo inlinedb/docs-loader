@@ -1,0 +1,11 @@
+{
+  "name": "docs-loader",
+  "private": true,
+  "description": "A webpack loader for converting InlineDB docs to html",
+  "scripts": {
+    "eslint": "eslint . --ignore-path .gitignore"
+  },
+  "repository": "inlinedb/docs-loader",
+  "author": "Gopikrishna Sathyamurthy",
+  "license": "MIT"
+}
