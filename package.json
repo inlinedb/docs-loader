@@ -5,6 +5,7 @@
   "scripts": {
     "eslint": "eslint . --ignore-path .gitignore"
   },
+  "main": "./src/index.js",
   "repository": "inlinedb/docs-loader",
   "author": "Gopikrishna Sathyamurthy",
   "license": "MIT",
