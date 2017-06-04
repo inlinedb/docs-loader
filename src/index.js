@@ -1,6 +1,6 @@
-const cheerio = require('cheerio');
-const {getLinkedModules} = require('./modules');
 const {convertLinksToHash} = require('./hash-links');
+const {decorate} = require('./template.js');
+const {getLinkedModules} = require('./modules');
 const {getPaths} = require('./file');
 const {highlight} = require('./highlighter');
 const {idTitles} = require('./id-titles');
@@ -24,8 +24,7 @@ module.exports = function (content) {
   } = getPaths(this);
 
   const html = md.render(content);
-  const section = `<section id="wrapper" class="docs-section">${html}</section>`;
-  const $html = cheerio.load(section);
+  const $html = decorate(html);
 
   const links = convertLinksToHash($html, basePath, currentPath, filename);
 
