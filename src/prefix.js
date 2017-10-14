@@ -10,8 +10,7 @@ const getPrefix = (base, filename) => {
   return parts
     .map(part => part.replace('.md', ''))
     .filter(part => part !== 'readme')
-    .join('-')
-    ;
+    .join('-');
 
 };
 
