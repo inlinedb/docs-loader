@@ -10,7 +10,8 @@
   "author": "Gopikrishna Sathyamurthy",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "4.8.0"
+    "eslint": "4.9.0",
+    "eslint-config-inlinedb": "github:inlinedb/eslint-config-inlinedb#master"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.2",
