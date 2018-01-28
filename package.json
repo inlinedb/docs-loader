@@ -1,6 +1,6 @@
 {
   "name": "@inlinedb/docs-loader",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A webpack loader for converting InlineDB docs to html",
   "scripts": {
     "eslint": "eslint . --ignore-path .gitignore"
